@@ -10,7 +10,7 @@ def minOperations(n):
     arg: `n`
     """
 
-    if n < 1:
+    if n <= 1:
         return 0
 
     text_file_chars = 'H'
@@ -18,12 +18,8 @@ def minOperations(n):
     copied_text = text_file_chars
     op_count = 1
 
-    # max num of operation is n
-    # since we do not necessarily have to
-    # copy and paste a single char each time
-    for i in range(n):
-        if len(text_file_chars) == n:
-            return op_count
+    # while length of text_file chars is less than n
+    while len(text_file_chars) < n:
         if len(text_file_chars) != 1 and not n % len(text_file_chars):
             # if n is perfectly divisible by the len of our text char
             # copy text and append to text_file
@@ -34,9 +30,9 @@ def minOperations(n):
         text_file_chars += copied_text
         op_count += 1
 
-    return 0
+    return op_count
 
 
 if __name__ == '__main__':
-    res = minOperations(4)
-    print('minimum operations for 12 chars is:', res)
+    res = minOperations(2147483640)
+    print('minimum operations for 2147483640 chars is:', res)
