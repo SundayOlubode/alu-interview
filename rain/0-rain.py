@@ -1,4 +1,6 @@
 #!/usr/bin/python3
+"""Rain: Calclate how much water will be retained after it rains."""
+
 
 def rain(walls):
     """doc comment"""
